@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row" style="padding-top: 10px;">
+    <div class="col-6">
+      <div class="card">
+        <div class="card-header">
+          <b>THUNDERDOME LEADERBOARD</b>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered table-hover">
+            <% @users.each do |user| %>
+              <tr class="<%= "#{rank_to_color(user.elo.floor)}" %>">
+                <td><b><%= user.name %></b></td>
+                <td><%= user.rank %></td>
+                <td><%= user.elo.floor %></td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="card">
+        <div class="card-header">
+          <b>BATTLE ARCHIVES</b>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered table-hover">
+            <% @matches.each do |battle| %>
+              <tr>
+                <td><%= battle.id %></td>
+                <td>
+                  <% battle.participants.each_with_index do |participant, index| %>
+                    <% if participant.losses == 0 %>
+                      <%= "<b>#{participant.user.name}[#{participant.score}]</b>#{',' unless index == battle.participants.count - 1}".html_safe %>
+                    <% else %>
+                      <%= "#{participant.user.name}[#{participant.score}]#{',' unless index == battle.participants.count - 1}" %>
+                    <% end %>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
