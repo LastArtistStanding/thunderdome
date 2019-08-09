@@ -1,29 +1,64 @@
 namespace :td do
-  desc "Creates a match"
-  task :run_match, [:users, :scores] => :environment do |task, args|
-    if args[:users].blank? || args[:scores].blank?
+  desc "Dumps database and recalculates."
+  task :recalculate => :environment do
+    Participant.destroy_all
+    Match.destroy_all
+    User.destroy_all
+    
+    ActiveRecord::Base.connection.reset_pk_sequence!(Participant.table_name)
+    ActiveRecord::Base.connection.reset_pk_sequence!(Match.table_name)
+    ActiveRecord::Base.connection.reset_pk_sequence!(User.table_name)
+    
+    matches = load_match_yaml
+    matches.each do |battle|
+      addMatch(battle[:participants], battle[:scores])
+    end
+  end
+  
+  task :update => :environment do
+    matches = load_match_yaml
+    matches.each_with_index do |battle, index|
+      next if Match.find(index)
+      addMatch(battle[:participants], battle[:scores])
+    end
+  end
+  
+  def load_match_yaml
+    matchData = YAML.load_file('db/data/match_data.yaml')
+    matches = []
+    
+    matchData.each do |currentMatch, details|
+      hash = {participants: details["participants"], scores: details["scores"]}
+      matches.push hash
+    end
+    
+    return matches
+  end
+  
+  def addMatch(users, scores)
+    if users.blank? || scores.blank?
       puts "Values are blank."
-      next
+      return
     end
     
     user_list = []
     score_list = []
     
-    args[:users].split('|').each do |user|
+    users.split('|').each do |user|
       user_list.push user
     end
-    args[:scores].split('|').each do |score, index|
+    scores.split('|').each do |score, index|
       score_list.push score.to_i
     end
     
     if user_list.length != score_list.length
       puts "Mismatched array lengths."
-      next
+      return
     end
     
     if user_list.length < 2
       puts "Insufficient participants."
-      next
+      return
     end
     
     map_users(user_list)
@@ -70,6 +105,7 @@ namespace :td do
     end
     
     latest_match = Match.create
+    puts "Match #{latest_match.id} recorded!"
     user_list.each_with_index do |user, index|
       user.elo += elo_deltas[index]
       user.wins += win_deltas[index]
@@ -90,10 +126,12 @@ namespace :td do
       
       user.save!
     end
+    puts "-----"
+    puts ""
   end
   
   def calc_elo_change(player_elo, opponent_elo, win)
-    k = 40
+    k = 80
     
     probability = 1.0 / ( 1.0 + ( 10.0 ** ( ( opponent_elo - player_elo ) / 400.0 ) ) )
 

@@ -11,3 +11,36 @@
  * It is generally better to create a new file per style scope.
  *
  */
+ 
+.table.condensed td {
+    padding: .25em;
+}
+.DragonG {
+    background-color: #971010;
+    color: #FFD700;
+}
+.Dragon {
+    background-color: #971010;
+    color: #FFFFFF;
+}
+.RuneG, .RuneT, .Rune {
+    background-color: #BBDEFB;
+}
+.AdamantG, .AdamantT, .Adamant {
+    background-color: #B2DFDB;
+}
+.MithrilG, .MithrilT, .Mithril {
+    background-color: #C5CAE9;
+}
+.SteelG, .SteelT, .Steel {
+    background-color: #ECEFF1;
+}
+.IronG, .IronT, .Iron {
+    background-color: #CFD8DC;
+}
+.BronzeG, .BronzeT, .Bronze {
+    background-color: #BCAAA4;
+}
+.ChefHat {
+    // No styles for you. :^)
+}

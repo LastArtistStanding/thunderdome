@@ -1,7 +1,7 @@
 class Match < ApplicationRecord
   has_many :participants
   
-  def get_winners
+  def winners
     winners = ""
     
     participants.each do |participant|
@@ -13,5 +13,7 @@ class Match < ApplicationRecord
         end
       end
     end
+    
+    winners = winners.reverse.sub(",".reverse, " and".reverse).reverse
   end
 end

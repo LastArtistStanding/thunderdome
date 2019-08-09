@@ -1,39 +1,58 @@
 <div class="container">
   <div class="row" style="padding-top: 10px;">
-    <div class="col-6">
-      <div class="card">
+    <div class="col-5">
+      <div class="card" style="margin-bottom: 10px;">
         <div class="card-header">
           <b>THUNDERDOME LEADERBOARD</b>
         </div>
         <div class="card-body">
-          <table class="table table-bordered table-hover">
+          <table class="table table-bordered condensed">
             <% @users.each do |user| %>
-              <tr class="<%= "#{rank_to_color(user.elo.floor)}" %>">
-                <td><b><%= user.name %></b></td>
-                <td><%= user.rank %></td>
+              <tr class="<%= "#{user.rank}" %>">
+                <td><img src="<%= "https://las-thunderdome.s3.us-east-2.amazonaws.com/ranks/#{user.rank}.png" %>"> <b><%= user.name %></b></td>
+                <td><%= user.display_rank %></td>
                 <td><%= user.elo.floor %></td>
               </tr>
             <% end %>
           </table>
         </div>
       </div>
+      
+      <div class="card">
+        <div class="card-header">
+          <b>RANKS</b>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered condensed">
+            <% @ranks.reverse_each do |rank| %>
+              <tr class="<%= "#{rank[:rank_name]}" %>">
+                <td><img src="<%= "https://las-thunderdome.s3.us-east-2.amazonaws.com/ranks/#{rank[:rank_name]}.png" %>"> <b><%= rank[:display_name] %></b></td>
+                <td><%= rank[:elo].floor %></td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+      </div>
     </div>
-    <div class="col-6">
+    
+    <div class="col-7">
       <div class="card">
         <div class="card-header">
           <b>BATTLE ARCHIVES</b>
         </div>
         <div class="card-body">
-          <table class="table table-bordered table-hover">
+          <table class="table table-bordered">
             <% @matches.each do |battle| %>
               <tr>
-                <td><%= battle.id %></td>
+                <td>
+                  <b><%= battle.id %></b>
+                </td>
                 <td>
                   <% battle.participants.each_with_index do |participant, index| %>
                     <% if participant.losses == 0 %>
-                      <%= "<b>#{participant.user.name}[#{participant.score}]</b>#{',' unless index == battle.participants.count - 1}".html_safe %>
+                      <%= "<b>#{participant.user.name} [Score: #{participant.score}, Elo Change: #{'+' if participant.elo_delta.positive?}#{participant.elo_delta.round}]</b>#{'<br>' unless index == battle.participants.count - 1}".html_safe %>
                     <% else %>
-                      <%= "#{participant.user.name}[#{participant.score}]#{',' unless index == battle.participants.count - 1}" %>
+                      <%= "#{participant.user.name} [Score: #{participant.score}, Elo Change: #{'+' if participant.elo_delta.positive?}#{participant.elo_delta.round}]#{'<br>' unless index == battle.participants.count - 1}".html_safe %>
                     <% end %>
                   <% end %>
                 </td>
