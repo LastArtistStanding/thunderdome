@@ -11,15 +11,15 @@ namespace :td do
     
     matches = load_match_yaml
     matches.each do |battle|
-      addMatch(battle[:participants], battle[:scores])
+      addMatch(battle[:participants], battle[:scores], battle[:topic], battle[:duration])
     end
   end
   
   task :update => :environment do
     matches = load_match_yaml
     matches.each_with_index do |battle, index|
-      next if Match.find(index)
-      addMatch(battle[:participants], battle[:scores])
+      next if Match.find_by_id(index + 1)
+      addMatch(battle[:participants], battle[:scores], battle[:topic], battle[:duration])
     end
   end
   
@@ -28,14 +28,14 @@ namespace :td do
     matches = []
     
     matchData.each do |currentMatch, details|
-      hash = {participants: details["participants"], scores: details["scores"]}
+      hash = {participants: details["participants"], scores: details["scores"], topic: details["topic"], duration: details["duration"]}
       matches.push hash
     end
     
     return matches
   end
   
-  def addMatch(users, scores)
+  def addMatch(users, scores, topic, duration)
     if users.blank? || scores.blank?
       puts "Values are blank."
       return
@@ -62,7 +62,7 @@ namespace :td do
     end
     
     map_users(user_list)
-    update_rankings(user_list, score_list)
+    update_data(user_list, score_list, topic, duration)
   end
   
   def map_users(user_list)
@@ -75,7 +75,7 @@ namespace :td do
     end
   end
   
-  def update_rankings(user_list, score_list)
+  def update_data(user_list, score_list, topic, duration)
     elo_deltas = score_list.map { 0.0 }
     win_deltas = score_list.map { 0 }
     loss_deltas = score_list.map { 0 }
@@ -104,25 +104,26 @@ namespace :td do
       elo_deltas[user_index] *= Math.sqrt(score_list.count.to_f - 1.0)
     end
     
-    latest_match = Match.create
-    puts "Match #{latest_match.id} recorded!"
+    latest_match = Match.create(topic: topic, duration: duration)
+    puts "Match #{latest_match.id} (#{topic || 'Unknown Topic'} - #{duration || '30 min'}) recorded!"
     user_list.each_with_index do |user, index|
-      user.elo += elo_deltas[index]
-      user.wins += win_deltas[index]
-      user.losses += loss_deltas[index]
-      user.ties += tie_deltas[index]
+      puts "#{user.name} (#{user.elo.floor}) has won #{win_deltas[index]}, lost #{loss_deltas[index]} and tied #{tie_deltas[index]}. Elo Change: #{elo_deltas[index].round}"
       
       Participant.create(
         { user_id: user.id, 
-          match_id: latest_match.id, 
+          elo: user.elo,
+          match_id: latest_match.id,
           score: score_list[index], 
           elo_delta: elo_deltas[index], 
           wins: win_deltas[index],
           losses: loss_deltas[index],
           ties: tie_deltas[index]
         })
-      
-      puts "#{user.name} has won #{win_deltas[index]}, lost #{loss_deltas[index]} and tied #{tie_deltas[index]}. Elo Change: #{elo_deltas[index]}"
+        
+      user.elo += elo_deltas[index]
+      user.wins += win_deltas[index]
+      user.losses += loss_deltas[index]
+      user.ties += tie_deltas[index]
       
       user.save!
     end

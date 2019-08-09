@@ -41,18 +41,20 @@
           <b>BATTLE ARCHIVES</b>
         </div>
         <div class="card-body">
-          <table class="table table-bordered">
+          <table class="table table-bordered condensed">
             <% @matches.each do |battle| %>
               <tr>
                 <td>
-                  <b><%= battle.id %></b>
+                  <b><%= "Battle #{battle.id}" %></b>
+                  <%= "<br>#{battle.topic}".html_safe if battle.topic.present? %>
+                  <br><%= "#{battle.duration || '30 min'}" %>
                 </td>
-                <td>
+                <td style="white-space: nowrap;">
                   <% battle.participants.each_with_index do |participant, index| %>
                     <% if participant.losses == 0 %>
-                      <%= "<b>#{participant.user.name} [Score: #{participant.score}, Elo Change: #{'+' if participant.elo_delta.positive?}#{participant.elo_delta.round}]</b>#{'<br>' unless index == battle.participants.count - 1}".html_safe %>
+                      <%= "<b>#{participant.user.name} scored #{participant.score} (#{participant.elo.floor}#{'+' if participant.elo_delta.positive?}#{participant.elo_delta.round})</b>#{'<br>' unless index == battle.participants.count - 1}".html_safe %>
                     <% else %>
-                      <%= "#{participant.user.name} [Score: #{participant.score}, Elo Change: #{'+' if participant.elo_delta.positive?}#{participant.elo_delta.round}]#{'<br>' unless index == battle.participants.count - 1}".html_safe %>
+                      <%= "#{participant.user.name} scored #{participant.score} (#{participant.elo.floor}#{'+' if participant.elo_delta.positive?}#{participant.elo_delta.round})#{'<br>' unless index == battle.participants.count - 1}".html_safe %>
                     <% end %>
                   <% end %>
                 </td>

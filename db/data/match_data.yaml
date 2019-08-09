@@ -1,183 +1,265 @@
 Match1:
-    participants: "Sugoi|Wolf"
-    scores: "12|6"
+    participants: "Wolf|Sugoi"
+    scores: "6|12"
+    topic: "Submerge"
 Match2:
-    participants: "Choob|Wolf"
-    scores: "8|13"
+    participants: "Joe|Subu|Feil"
+    scores: "5|8|7"
+    topic: "Chimera"
 Match3:
+    participants: "Wolf|Choob"
+    scores: "13|8"
+    topic: "Christmas"
+    duration: "1 hr"
+Match4:
     participants: "Kaz|Sugar"
     scores: "11|5"
-Match4:
+    topic: "Warmth"
+Match5:
     participants: "Jason|Kringle"
     scores: "3|12"
-Match5:
-    participants: "Matthew|Sugar"
-    scores: "7|10"
+    topic: "Jojo"
+    duration: "2 hr"
 Match6:
+    participants: "Sugar|Matthew"
+    scores: "10|7"
+    topic: "Weather Character"
+    duration: "3 hr"
+Match7:
     participants: "Kaz|Moth"
     scores: "4|10"
-Match7:
+    duration: "40 min"
+    topic: "Mimic"
+Match8:
     participants: "Kaz|Waifu"
     scores: "13|17"
-Match8:
+    topic: "Penguin Knights On Dog Mounts"
+Match9:
     participants: "Waifu|Will"
     scores: "16|8"
-Match9:
-    participants: "Sugar|Will"
-    scores: "11|6"
+    topic: "Naruto"
 Match10:
+    participants: "Will|Sugar"
+    scores: "6|11"
+    topic: "Getting To Rest After A Long Day"
+Match11:
+    participants: "idunno|Sips|Cool dude"
+    scores: "4|9|1"
+    topic: "Cats"
+    duration: "15 min"
+Match12:
     participants: "Stinky Bro|Matthew"
     scores: "9|3"
-Match11:
+    topic: "Pinup Guy"
+Match13:
     participants: "Stinky Bro|Matthew"
     scores: "10|6"
-Match12:
+    topic: "Twitch Streamer"
+Match14:
     participants: "Zanti|Choob"
     scores: "8|13"
-Match13:
-    participants: "Joe|Feil"
-    scores: "4|10"
-Match14:
-    participants: "Kringle|Zanti"
-    scores: "17|7"
-Match15: 
-    participants: "idunno|Stutter"
-    scores: "10|2"
+    topic: "Flower People"
+Match15:
+    participants: "Feil|Joe"
+    scores: "10|4"
+    topic: "Prosthetic Limbs"
 Match16:
-    participants: "Kringle|Jason"
-    scores: "15|6"
-Match17:
+    participants: "Zanti|Kringle"
+    scores: "7|17"
+    topic: "Bald, Yet Beautiful"
+    duration: "2 hr"
+Match17: 
+    participants: "Stutter|idunno"
+    scores: "2|10"
+    topic: "Ahegao"
+Match18:
+    participants: "Jason|Kringle"
+    scores: "6|15"
+    topic: "Jojo"
+Match19:
     participants: "Kringle|Choob"
     scores: "4|14"
-Match18:
+    topic: "Life Study"
+Match20:
     participants: "Feil|nem"
     scores: "10|10"
-Match19:
+    topic: "Inquisitor"
+Match21:
     participants: "Chun|Uber"
     scores: "9|5"
-Match20:
+    topic: "Hell"
+    duration: "2 hr"
+Match22:
     participants: "Kringle|Brush"
     scores: "22|5"
-Match21:
-    participants: "Kringle|Feil"
-    scores: "12|6"
-Match22:
+    topic: "Hell"
+    duration: "1 hr"
+Match23:
+    participants: "Feil|Kringle"
+    scores: "6|12"
+    topic: "Satan"
+    duration: "1 hr"
+Match24:
     participants: "Chun|Ursus"
     scores: "1|-1"
-Match23:
-    participants: "Kringle|Waifu"
-    scores: "5|12"
-Match24:
-    participants: "Nic|Ursus"
-    scores: "9|5"
+    topic: "Cops"
+    duration: "1 hr"
 Match25:
-    participants: "Feil|Subu"
-    scores: "4|12"
+    participants: "Waifu|Kringle"
+    scores: "12|5"
+    topic: "Breath of the Wild"
 Match26:
-    participants: "Waifu|Nic"
-    scores: "10|14"
+    participants: "Ursus|Nic"
+    scores: "5|9"
+    topic: "Oak (Pokemon)"
 Match27:
+    participants: "Nic|Waifu"
+    scores: "14|10"
+    topic: "Chicken"
+Match28:
     participants: "Sugoi|Feil"
     scores: "12|9"
-Match28:
+    topic: "Snek"
+Match29:
+    participants: "Subu|Feil"
+    scores: "12|4"
+    topic: "Gorilla"
+Match30:
     participants: "Mathias|Stutter"
     scores: "5|8"
-Match29:
-    participants: "Wolf|Arm-on"
-    scores: "11|4"
-Match30: 
-    participants: "Chun|Kringle"
-    scores: "-1|1"
+    topic: "Demon Hands"
+    duration: "10 min"
 Match31:
+    participants: "Waifu|Nic|Sugar"
+    scores: "7|5|4"
+    topic: "Character Swap" 
+Match32:
+    participants: "Arm-on|Wolf"
+    scores: "4|11"
+    topic: "Flying"
+Match33: 
+    participants: "Kringle|Chun"
+    scores: "1|-1"
+    topic: "Hell"
+    duration: "2 hr"
+Match34:
     participants: "Kringle|Bandit"
     scores: "11|8"
-Match32:
-    participants: "Feil|Will"
+    topic: "Memories"
+Match35:
+    participants: "Will|Feil"
     scores: "13|13"
-Match33:
+    topic: "Cooking"
+Match36:
+    participants: "Feil|Kringle"
+    scores: "10|8"
+    topic: "Catgirl"
+Match37:
     participants: "Kringle|Jason"
     scores: "7|6"
-Match34:
-    participants: "Kringle|Feil"
-    scores: "8|10"
-Match35:
+    topic: "DIO"
+Match38:
+    participants: "Yog|Kaz|Purin|idunno|Bandit|nem|Rad|Feil"
+    scores: "4|7|8|5|11|13|9|6"
+    topic: "Gondola Food"
+Match39:
     participants: "Kringle|Cool dude"
     scores: "17|4"
-Match36:
-    participants: "Kringle|Subu"
-    scores: "10|3"
-Match37:
-    participants: "idunno|slug"
-    scores: "5|13"
-Match38:
+    topic: "Harpy"
+    duration: "1 hr"
+Match40:
+    participants: "Subu|Kringle"
+    scores: "3|10"
+    topic: "Dragon"
+Match41:
+    participants: "slug|idunno"
+    scores: "13|5"
+    topic: "Astronaut"
+Match42:
     participants: "Sugar|Feil"
     scores: "8|9"
-Match39:
-    participants: "Feil|Cool dude"
-    scores: "10|9"
-Match40:
-    participants: "Feil|Joe"
-    scores: "10|10"
-Match41:
-    participants: "Sips|idunno|Cool dude"
-    scores: "9|4|1"
-Match42:
-    participants: "Waifu|Sugar|Jason"
-    scores: "7|4|5"
-Match43: 
-    participants: "Feil|nem|Yog|Kaz|idunno|Bandit|Purin|Rad"
-    scores: "6|13|4|2|8|5|7|9"
+    topic: "Mushroom Person"
+Match43:
+    participants: "Cool dude|Feil"
+    scores: "9|10"
+    topic: "Pillow Character Design (Limited Color Palette)"
 Match44:
-    participants: "Subu|Joe|Feil"
-    scores: "8|5|7"
+    participants: "Joe|Feil"
+    scores: "10|10"
+    topic: "Lupin III"
 Match45: 
     participants: "Finlay|hoppy"
     scores: "2|10"
+    topic: "Alpaca"
 Match46:
-    participants: "Sugar|Jason"
-    scores: "2|12"
+    participants: "Jason|Sugar"
+    scores: "12|2"
+    topic: "Fight"
 Match47:
     participants: "Feil|Jason"
     scores: "9|9"
+    topic: "Boomer"
+    duration: "10 min"
 Match48:
-    participants: "Subu|Mathias"
-    scores: "6|13"
+    participants: "Mathias|Suba"
+    scores: "13|6"
+    topic: "Greek"
+    duration: "20 min"
 Match49:
     participants: "Nic|banana"
     scores: "10|10"
+    topic: "Frog"
 Match50:
-    participants: "banana|Joe"
-    scores: "17|17"
+    participants: "Bandit|Waifu|nem|Cool dude|Purin|hoppy|Thaane"
+    scores: "5|4|9|7|14|6|10"
+    topic: ":drum: :shark: :gondola:"
 Match51:
     participants: "Nessie|Kaz"
     scores: "10|13"
+    topic: "Flying"
 Match52:
-    participants: "Purin|Bandit|Waifu|nem|Cool dude|hoppy|Thaane"
-    scores: "14|5|4|9|7|6|10"
-Match53:
-    participants: "hoppy|Kaz"
-    scores: "10|12"
-Match54:
     participants: "Nic|banana"
     scores: "9|4"
+    topic: "Elemental Fighter (no ref, pen/paper)"
+Match53:
+    participants: "Kringle|Nic"
+    scores: "13|15"
+    topic: "Robot Fruit"
+Match54:
+    participants: "banana|Joe"
+    scores: "17|17"
+    topic: "Gestures"
 Match55:
-    participants: "Nic|Kringle"
-    scores: "15|13"
+    participants: "banana|Joe|Subu|Feil"
+    scores: "6|4|7|4"
+    topic: "Gestures"
 Match56:
-    participants: "Subu|banana|Joe|Feil"
-    scores: "7|6|4|4"
-Match57:
     participants: "Waifu|nem|Thaane"
     scores: "10|20|7"
-Match58:
+    topic: "Robbie Rotten"
+Match57:
     participants: "Subu|banana"
     scores: "16|5"
+    topic: "Dragon"
+    duration: "24 hr"
+Match58:
+    participants: "Kaz|nem"
+    scores: "23|4"
+    topic: "Morosity / Sea"
+    duration: "1 hr"
+Match59:
+    participants: "Will|Kaz"
+    scores: "7|6"
+    topic: "Cute"
 Match60:
-    participants: "nem|Kaz"
-    scores: "4|23"
+    participants: "Nessie|hoppy"
+    scores: "8|7"
+    topic: "Hellfire"
 Match61:
-    participants: "Kaz|Will"
-    scores: "6|7"
+    participants: "Nic|banana"
+    scores: "19|4"
+    topic: "Electrical Outlet"
 Match62:
-    participants: "hoppy|Nessie"
-    scores: "7|8"
+    participants: "Subu|Feil|banana"
+    scores: "4|18|5"
+    topic: "Waifu"
