@@ -35,17 +35,17 @@ class UsersController < ApplicationController
         end
         
         if m.participants.count > 2
-          @head_to_heads[p.name][:multi_wins] += p.wins
+          @head_to_heads[p.name][:multi_wins] += p.losses
           @head_to_heads[p.name][:multi_ties] += p.ties
-          @head_to_heads[p.name][:multi_losses] += p.losses
+          @head_to_heads[p.name][:multi_losses] += p.wins
         else
-          @head_to_heads[p.name][:wins] += p.wins
+          @head_to_heads[p.name][:wins] += p.losses
           @head_to_heads[p.name][:ties] += p.ties
-          @head_to_heads[p.name][:losses] += p.losses
+          @head_to_heads[p.name][:losses] += p.wins
         end
-        @head_to_heads[p.name][:total_wins] += p.wins
+        @head_to_heads[p.name][:total_wins] += p.losses
         @head_to_heads[p.name][:total_ties] += p.ties
-        @head_to_heads[p.name][:total_losses] += p.losses
+        @head_to_heads[p.name][:total_losses] += p.wins
       end
     end
     

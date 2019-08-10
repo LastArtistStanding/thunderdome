@@ -9,7 +9,7 @@
           <table class="table table-bordered condensed">
             <% @users.each_with_index do |user, index| %>
               <tr class="<%= "#{user.rank}" %>">
-                <td><img src="<%= "https://las-thunderdome.s3.us-east-2.amazonaws.com/ranks/#{user.rank}.png" %>"> <b><%= "#{index + 1}. #{user.name}" %></b></td>
+                <td><img src="<%= "https://las-thunderdome.s3.us-east-2.amazonaws.com/ranks/#{user.rank}.png" %>"> <b><%= link_to "#{index + 1}. #{user.name}", user_path(user.id) %></b></td>
                 <td><%= user.display_rank %></td>
                 <td><%= user.elo.floor %></td>
               </tr>
