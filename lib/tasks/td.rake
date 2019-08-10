@@ -11,7 +11,7 @@ namespace :td do
     
     matches = load_match_yaml
     matches.each do |battle|
-      addMatch(battle[:participants], battle[:scores], battle[:topic], battle[:duration])
+      addMatch(battle[:participants], battle[:scores], battle[:details])
     end
   end
   
@@ -19,7 +19,7 @@ namespace :td do
     matches = load_match_yaml
     matches.each_with_index do |battle, index|
       next if Match.find_by_id(index + 1)
-      addMatch(battle[:participants], battle[:scores], battle[:topic], battle[:duration])
+      addMatch(battle[:participants], battle[:scores], battle[:details])
     end
   end
   
@@ -28,14 +28,15 @@ namespace :td do
     matches = []
     
     matchData.each do |currentMatch, details|
-      hash = {participants: details["participants"], scores: details["scores"], topic: details["topic"], duration: details["duration"]}
+      battle_details = {topic: details["topic"], duration: details["duration"], description: details["description"], date: details["date"]}
+      hash = {participants: details["participants"], scores: details["scores"], details: battle_details}
       matches.push hash
     end
     
     return matches
   end
   
-  def addMatch(users, scores, topic, duration)
+  def addMatch(users, scores, details)
     if users.blank? || scores.blank?
       puts "Values are blank."
       return
@@ -62,20 +63,20 @@ namespace :td do
     end
     
     map_users(user_list)
-    update_data(user_list, score_list, topic, duration)
+    update_data(user_list, score_list, details)
   end
   
   def map_users(user_list)
     user_list.each_with_index do |user, index|
       if User.find_by(name: user).nil?
-        user_list[index] = User.create(name: user, elo: 1200.0, wins: 0, losses: 0, ties: 0)
+        user_list[index] = User.create(name: user, elo: 1200.0, wins: 0, losses: 0, ties: 0, multi_wins: 0, multi_losses: 0, multi_ties: 0)
       else
         user_list[index] = User.find_by(name: user)
       end
     end
   end
   
-  def update_data(user_list, score_list, topic, duration)
+  def update_data(user_list, score_list, details)
     elo_deltas = score_list.map { 0.0 }
     win_deltas = score_list.map { 0 }
     loss_deltas = score_list.map { 0 }
@@ -104,13 +105,16 @@ namespace :td do
       elo_deltas[user_index] *= Math.sqrt(score_list.count.to_f - 1.0)
     end
     
-    latest_match = Match.create(topic: topic, duration: duration)
-    puts "Match #{latest_match.id} (#{topic || 'Unknown Topic'} - #{duration || '30 min'}) recorded!"
+    latest_match = Match.create(topic: details[:topic], duration: details[:duration], description: details[:description], date: details[:date])
+    latest_match.submissions = "https://las-thunderdome.s3.us-east-2.amazonaws.com/submissions/#{latest_match.id}.png"
+    
+    puts "Match #{latest_match.id} (#{details[:topic] || 'Unknown Topic'} - #{details[:duration] || '30 min'}) recorded!"
     user_list.each_with_index do |user, index|
       puts "#{user.name} (#{user.elo.floor}) has won #{win_deltas[index]}, lost #{loss_deltas[index]} and tied #{tie_deltas[index]}. Elo Change: #{elo_deltas[index].round}"
       
       Participant.create(
-        { user_id: user.id, 
+        { user_id: user.id,
+          name: user.name,
           elo: user.elo,
           match_id: latest_match.id,
           score: score_list[index], 
@@ -119,11 +123,17 @@ namespace :td do
           losses: loss_deltas[index],
           ties: tie_deltas[index]
         })
-        
+      
       user.elo += elo_deltas[index]
-      user.wins += win_deltas[index]
-      user.losses += loss_deltas[index]
-      user.ties += tie_deltas[index]
+      if user_list.count == 2
+        user.wins += win_deltas[index]
+        user.losses += loss_deltas[index]
+        user.ties += tie_deltas[index]
+      else
+        user.multi_wins += win_deltas[index]
+        user.multi_losses += loss_deltas[index]
+        user.multi_ties += tie_deltas[index]
+      end
       
       user.save!
     end

@@ -1,0 +1,63 @@
+<div class="container-fluid">
+  <div class="row" style="padding-top: 10px;">
+    <div class="col-md-12">
+      <img style="max-width:100%; max-height:100%; display: block; margin-left: auto; margin-right: auto;" src="https://las-thunderdome.s3.us-east-2.amazonaws.com/submissions/<%= @match.id %>.png">
+    </div>
+  </div>
+  <div class="row" style="padding-top: 10px;">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8">
+      <% if @match.description.present? %>
+        <div class="card" style="margin-top: 10px;">
+          <div class="card-header">
+            <b>Special Rules</b>
+          </div>
+          <div class="card-body">
+            <%= @match.description %>
+          </div>
+        </div>
+      <% end %>
+      <div class="card" style="margin-top: 10px;">
+        <div class="card-header">
+          <b>Combatant Data</b>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered condensed">
+            <thead>
+              <th>#</th>
+              <th>Artist</th>
+              <th>Score</th>
+              <th>Wins</th>
+              <th>Ties</th>
+              <th>Losses</th>
+              <th>Old Rank</th>
+              <th>Old Elo</th>
+              <th>Elo Change</th>
+              <th>New Elo</th>
+            </thead>
+            <% @participants.each_with_index do |p, i| %>
+              <tr class="<%= p.row_style %>">
+                <td><b><%= i + 1 %></b></td>
+                <td><img src="<%= "https://las-thunderdome.s3.us-east-2.amazonaws.com/ranks/#{p.rank}.png" %>"> <b><%= p.name %></b></td>
+                <td><%= p.score %></td>
+                <td><%= p.wins %></td>
+                <td><%= p.ties %></td>
+                <td><%= p.losses %></td>
+                <td><%= p.display_rank %></td>
+                <td><%= p.elo.floor %></td>
+                <td><%= "#{'+' if p.elo_delta.positive?}#{p.elo_delta.round}" %></td>
+                <td><%= (p.elo + p.elo_delta).floor  %></td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+      </div>
+      <br>
+      <b><span style="margin-right: 20px; padding-bottom: 20px;"><%= link_to "Back to Match History", matches_path %></span></b>
+      <b><span><%= link_to "Back to Main Page", root_path %></span></b>
+    </div>
+    <div class="col-md-2">
+    </div>
+  </div>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_09_073334) do
+ActiveRecord::Schema.define(version: 2019_08_10_210227) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,13 +21,14 @@ ActiveRecord::Schema.define(version: 2019_08_09_073334) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "date"
+    t.string "submissions"
   end
 
   create_table "participants", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "match_id"
     t.integer "score"
-    t.string "submission"
     t.float "elo_delta"
     t.integer "wins"
     t.integer "losses"
@@ -35,6 +36,7 @@ ActiveRecord::Schema.define(version: 2019_08_09_073334) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "elo"
+    t.string "name"
     t.index ["match_id"], name: "index_participants_on_match_id"
     t.index ["user_id"], name: "index_participants_on_user_id"
   end
@@ -47,6 +49,9 @@ ActiveRecord::Schema.define(version: 2019_08_09_073334) do
     t.integer "ties"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "multi_wins"
+    t.integer "multi_losses"
+    t.integer "multi_ties"
   end
 
   add_foreign_key "participants", "matches"

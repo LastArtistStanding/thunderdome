@@ -1,0 +1,91 @@
+<div class="container">
+  <div class="row" style="padding-top: 10px;">
+    <div class="col-md-5">
+      <div class="card">
+        <div class="card-header">
+          <img src="<%= "https://las-thunderdome.s3.us-east-2.amazonaws.com/ranks/#{@user.rank}.png" %>"> <b>Combatant Profile - <%= @user.name %></b>
+        </div>
+        <div class="card-body">
+          <h5><b><%= "Rating: #{@user.elo.floor} - #{@user.display_rank}" %></b></h5>
+          <b>Fought in <%= @matches.count %> domes.</b><br>
+          <b>Wins (Total):</b> <%= @user.wins + @user.multi_wins %><br>
+          <b>Ties (Total):</b> <%= @user.ties + @user.ties %><br>
+          <b>Losses (Total):</b> <%= @user.losses + @user.multi_losses %><br>
+          <b>Wins (Duels):</b>  <%= @user.wins %><br>
+          <b>Ties (Duels):</b>  <%= @user.ties %><br>
+          <b>Losses (Duels):</b>   <%= @user.losses %><br>
+          <b>Wins (Multidome):</b>  <%= @user.multi_wins %><br>
+          <b>Ties (Multidome):</b>  <%= @user.multi_ties %><br>
+          <b>Losses (Multidome):</b>  <%= @user.multi_losses %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-7">
+      <div class="card">
+        <div class="card-header">
+          <b>Match History</b>
+        </div>
+        <div class="card-body">
+          <table class="small table table-bordered condensed">
+            <thead>
+              <th>Topic</th>
+              <th>Opponent</th>
+              <th>Date</th>
+              <th>Result</th>
+            </thead>
+            <% @matches.each_with_index do |m, index| %>
+              <tr>
+                <td><%= link_to m.topic || "Unspecified Topic", match_path(m.id) %></td>
+                <td><%= @opponents[index] %></td>
+                <td><%= m.date.strftime("%B %d, %Y") %></td>
+                <td><%= @results[index] %></td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="padding-top: 10px;">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <b>Head-to-head Records</b>
+        </div>
+        <div class="card-body">
+          <table class="table table-condensed table-bordered">
+            <thead>
+              <th>Opponent</th>
+              <th>W</th>
+              <th>T</th>
+              <th>L</th>
+              <th>MW</th>
+              <th>MT</th>
+              <th>ML</th>
+              <th>TW</th>
+              <th>TT</th>
+              <th>TL</th>
+            </thead>
+            <% @head_to_heads.each do |opponent, h| %>
+              <tr>
+                <td><%= opponent %></td>
+                <td class="table-success"><%= h[:wins] %></td>
+                <td class="table-warning"><%= h[:ties] %></td>
+                <td class="table-danger"><%= h[:losses] %></td>
+                <td class="table-success"><%= h[:multi_wins] %></td>
+                <td class="table-warning"><%= h[:multi_ties] %></td>
+                <td class="table-danger"><%= h[:multi_losses] %></td>
+                <td class="table-success"><%= h[:total_wins] %></td>
+                <td class="table-warning"><%= h[:total_ties] %></td>
+                <td class="table-danger"><%= h[:total_losses] %></td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <b><span style="margin-right: 20px;"><%= link_to "Back to User List", users_path %></span></b>
+  <b><span><%= link_to "Back to Main Page", root_path %></span></b>
+</div>

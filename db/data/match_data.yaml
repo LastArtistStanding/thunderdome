@@ -2,264 +2,328 @@ Match1:
     participants: "Wolf|Sugoi"
     scores: "6|12"
     topic: "Submerge"
+    date: 2019-06-22
 Match2:
     participants: "Joe|Subu|Feil"
     scores: "5|8|7"
     topic: "Chimera"
+    date: 2019-06-22
 Match3:
     participants: "Wolf|Choob"
     scores: "13|8"
     topic: "Christmas"
     duration: "1 hr"
+    date: 2019-06-23
 Match4:
     participants: "Kaz|Sugar"
     scores: "11|5"
     topic: "Warmth"
+    date: 2019-06-23
 Match5:
     participants: "Jason|Kringle"
     scores: "3|12"
     topic: "Jojo"
     duration: "2 hr"
+    date: 2019-06-23
 Match6:
     participants: "Sugar|Matthew"
     scores: "10|7"
     topic: "Weather Character"
     duration: "3 hr"
+    date: 2019-06-24
 Match7:
     participants: "Kaz|Moth"
     scores: "4|10"
     duration: "40 min"
     topic: "Mimic"
+    date: 2019-06-24
 Match8:
     participants: "Kaz|Waifu"
     scores: "13|17"
     topic: "Penguin Knights On Dog Mounts"
+    date: 2019-06-24
 Match9:
     participants: "Waifu|Will"
     scores: "16|8"
     topic: "Naruto"
+    date: 2019-07-02
 Match10:
     participants: "Will|Sugar"
     scores: "6|11"
     topic: "Getting To Rest After A Long Day"
+    date: 2019-07-03
 Match11:
     participants: "idunno|Sips|Cool dude"
     scores: "4|9|1"
     topic: "Cats"
     duration: "15 min"
+    date: 2019-07-03
 Match12:
     participants: "Stinky Bro|Matthew"
     scores: "9|3"
     topic: "Pinup Guy"
+    date: 2019-07-03
 Match13:
     participants: "Stinky Bro|Matthew"
     scores: "10|6"
     topic: "Twitch Streamer"
+    date: 2019-07-03
 Match14:
     participants: "Zanti|Choob"
     scores: "8|13"
     topic: "Flower People"
+    date: 2019-07-03
 Match15:
     participants: "Feil|Joe"
     scores: "10|4"
     topic: "Prosthetic Limbs"
+    date: 2019-07-03
 Match16:
     participants: "Zanti|Kringle"
     scores: "7|17"
     topic: "Bald, Yet Beautiful"
     duration: "2 hr"
+    date: 2019-07-04
 Match17: 
     participants: "Stutter|idunno"
     scores: "2|10"
     topic: "Ahegao"
+    date: 2019-07-04
 Match18:
     participants: "Jason|Kringle"
     scores: "6|15"
     topic: "Jojo"
+    date: 2019-07-04
 Match19:
     participants: "Kringle|Choob"
     scores: "4|14"
     topic: "Life Study"
+    date: 2019-07-05
 Match20:
     participants: "Feil|nem"
     scores: "10|10"
     topic: "Inquisitor"
+    date: 2019-07-06
 Match21:
     participants: "Chun|Uber"
     scores: "9|5"
     topic: "Hell"
     duration: "2 hr"
+    date: 2019-07-06
 Match22:
     participants: "Kringle|Brush"
     scores: "22|5"
     topic: "Hell"
     duration: "1 hr"
+    date: 2019-07-06
 Match23:
     participants: "Feil|Kringle"
     scores: "6|12"
     topic: "Satan"
     duration: "1 hr"
+    date: 2019-07-10
 Match24:
     participants: "Chun|Ursus"
     scores: "1|-1"
     topic: "Cops"
     duration: "1 hr"
+    date: 2019-07-10
 Match25:
     participants: "Waifu|Kringle"
     scores: "12|5"
     topic: "Breath of the Wild"
+    date: 2019-07-10
 Match26:
     participants: "Ursus|Nic"
     scores: "5|9"
     topic: "Oak (Pokemon)"
+    date: 2019-07-10
 Match27:
     participants: "Nic|Waifu"
     scores: "14|10"
     topic: "Chicken"
+    date: 2019-07-10
 Match28:
     participants: "Sugoi|Feil"
     scores: "12|9"
     topic: "Snek"
+    date: 2019-07-10
 Match29:
     participants: "Subu|Feil"
     scores: "12|4"
     topic: "Gorilla"
+    date: 2019-07-10
 Match30:
     participants: "Mathias|Stutter"
     scores: "5|8"
     topic: "Demon Hands"
     duration: "10 min"
+    date: 2019-07-11
 Match31:
     participants: "Waifu|Nic|Sugar"
     scores: "7|5|4"
-    topic: "Character Swap" 
+    topic: "Character Swap"
+    date: 2019-07-11
 Match32:
     participants: "Arm-on|Wolf"
     scores: "4|11"
     topic: "Flying"
+    date: 2019-07-12
 Match33: 
     participants: "Kringle|Chun"
     scores: "1|-1"
     topic: "Hell"
     duration: "2 hr"
+    date: 2019-07-12
 Match34:
     participants: "Kringle|Bandit"
     scores: "11|8"
     topic: "Memories"
+    date: 2019-07-12
 Match35:
     participants: "Will|Feil"
     scores: "13|13"
     topic: "Cooking"
+    date: 2019-07-12
 Match36:
     participants: "Feil|Kringle"
     scores: "10|8"
     topic: "Catgirl"
+    date: 2019-07-13
 Match37:
     participants: "Kringle|Jason"
     scores: "7|6"
     topic: "DIO"
+    date: 2019-07-13
 Match38:
     participants: "Yog|Kaz|Purin|idunno|Bandit|nem|Rad|Feil"
     scores: "4|7|8|5|11|13|9|6"
     topic: "Gondola Food"
+    date: 2019-07-14
 Match39:
     participants: "Kringle|Cool dude"
     scores: "17|4"
     topic: "Harpy"
     duration: "1 hr"
+    date: 2019-07-14
 Match40:
     participants: "Subu|Kringle"
     scores: "3|10"
     topic: "Dragon"
+    date: 2019-07-14
 Match41:
     participants: "slug|idunno"
     scores: "13|5"
     topic: "Astronaut"
+    date: 2019-07-14
 Match42:
     participants: "Sugar|Feil"
     scores: "8|9"
     topic: "Mushroom Person"
+    date: 2019-07-15
 Match43:
     participants: "Cool dude|Feil"
     scores: "9|10"
-    topic: "Pillow Character Design (Limited Color Palette)"
+    topic: "Pillow Character Design"
+    description: "Limit your color palette to 3 colors."
+    date: 2019-07-15
 Match44:
     participants: "Joe|Feil"
     scores: "10|10"
     topic: "Lupin III"
+    date: 2019-07-15
 Match45: 
     participants: "Finlay|hoppy"
     scores: "2|10"
     topic: "Alpaca"
+    date: 2019-07-18
 Match46:
     participants: "Jason|Sugar"
     scores: "12|2"
     topic: "Fight"
+    date: 2019-07-18
 Match47:
     participants: "Feil|Jason"
     scores: "9|9"
     topic: "Boomer"
     duration: "10 min"
+    date: 2019-07-18
 Match48:
     participants: "Mathias|Suba"
     scores: "13|6"
     topic: "Greek"
     duration: "20 min"
+    date: 2019-07-19
 Match49:
     participants: "Nic|banana"
     scores: "10|10"
     topic: "Frog"
+    date: 2019-07-23
 Match50:
     participants: "Bandit|Waifu|nem|Cool dude|Purin|hoppy|Thaane"
     scores: "5|4|9|7|14|6|10"
     topic: ":drum: :shark: :gondola:"
+    date: 2019-07-24
 Match51:
     participants: "Nessie|Kaz"
     scores: "10|13"
     topic: "Flying"
+    date: 2019-07-25
 Match52:
     participants: "Nic|banana"
     scores: "9|4"
-    topic: "Elemental Fighter (no ref, pen/paper)"
+    topic: "Elemental Fighter"
+    description: "'Travel' conditions. No references allowed. Pen and low quality paper only."
+    date: 2019-07-26
 Match53:
     participants: "Kringle|Nic"
     scores: "13|15"
     topic: "Robot Fruit"
+    date: 2019-07-27
 Match54:
     participants: "banana|Joe"
     scores: "17|17"
     topic: "Gestures"
+    date: 2019-07-30
 Match55:
     participants: "banana|Joe|Subu|Feil"
     scores: "6|4|7|4"
     topic: "Gestures"
+    date: 2019-07-31
 Match56:
     participants: "Waifu|nem|Thaane"
     scores: "10|20|7"
     topic: "Robbie Rotten"
+    date: 2019-08-03
 Match57:
     participants: "Subu|banana"
     scores: "16|5"
     topic: "Dragon"
     duration: "24 hr"
+    date: 2019-08-04
 Match58:
     participants: "Kaz|nem"
     scores: "23|4"
     topic: "Morosity / Sea"
     duration: "1 hr"
+    date: 2019-08-05
 Match59:
     participants: "Will|Kaz"
     scores: "7|6"
     topic: "Cute"
+    date: 2019-08-06
 Match60:
     participants: "Nessie|hoppy"
     scores: "8|7"
     topic: "Hellfire"
+    date: 2019-08-06
 Match61:
     participants: "Nic|banana"
     scores: "19|4"
     topic: "Electrical Outlet"
+    date: 2019-08-06
 Match62:
     participants: "Subu|Feil|banana"
     scores: "4|18|5"
     topic: "Waifu"
+    date: 2019-08-08

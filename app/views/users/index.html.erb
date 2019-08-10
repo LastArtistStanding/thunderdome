@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row" style="padding-top: 10px;">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <b>Full User List - <%= link_to "Back to Main Page", root_path %></b>
+        </div>
+        <div class="card-body">
+          <b>Note: </b>Wins, losses and ties count multidome results.<br><br>
+          <table class="table table-bordered condensed">
+            <thead>
+              <th>#</th>
+              <th>Name</th>
+              <th>Rank</th>
+              <th>Rating</th>
+              <th>Matches</th>
+              <th>W</th>
+              <th>T</th>
+              <th>L</th>
+              <th>MW</th>
+              <th>MT</th>
+              <th>ML</th>
+              <th>Latest Match</th>
+            </thead>
+            <% @users.each_with_index do |user, index| %>
+              <tr class="<%= "#{user.rank}" %>">
+                <td><%= index + 1 %></td>
+                <td><img src="<%= "https://las-thunderdome.s3.us-east-2.amazonaws.com/ranks/#{user.rank}.png" %>"> <b><%= link_to user.name, user_path(user.id) %></b></td>
+                <td><%= user.display_rank %></td>
+                <td><%= user.elo.floor %></td>
+                <td><%= @match_count[index] %></td>
+                <td class="table-success"><%= user.wins %></td>
+                <td class="table-warning"><%= user.ties %></td>
+                <td class="table-danger"><%= user.losses %></td>
+                <td class="table-success"><%= user.multi_wins %></td>
+                <td class="table-warning"><%= user.multi_ties %></td>
+                <td class="table-danger"><%= user.multi_losses %></td>
+                <td><%= link_to "#{@opponents[index]}", match_path(@last_match[index].id) %></td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   def index
-    @users = User.all.order(elo: :desc)
-    @matches = Match.all.order(id: :desc)
+    @users = User.all.order(elo: :desc).limit(30)
+    @matches = Match.all.order(id: :desc).limit(30)
     
     @ranks = [0.0, 700.0, 800.0, 900.0, 1000.0, 1100.0, 1200.0, 1300.0, 1400.0,
               1500.0, 1600.0, 1700.0, 1800.0, 1900.0, 2000.0, 2100.0, 2200.0,
