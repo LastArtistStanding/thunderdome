@@ -27,6 +27,8 @@ class UsersController < ApplicationController
     participations.each { |p| @all_matches.push p.match }
     @head_to_heads = {}
     @all_matches.each do |m|
+      score = m.participants.find_by(name: @user.name).score
+      
       m.participants.each do |p|
         next if p.name == @user.name
         
@@ -35,17 +37,17 @@ class UsersController < ApplicationController
         end
         
         if m.participants.count > 2
-          @head_to_heads[p.name][:multi_wins] += p.losses
-          @head_to_heads[p.name][:multi_ties] += p.ties
-          @head_to_heads[p.name][:multi_losses] += p.wins
+          @head_to_heads[p.name][:multi_wins] += 1 if score > p.score
+          @head_to_heads[p.name][:multi_ties] += 1 if score == p.score
+          @head_to_heads[p.name][:multi_losses] += 1 if score < p.score
         else
-          @head_to_heads[p.name][:wins] += p.losses
-          @head_to_heads[p.name][:ties] += p.ties
-          @head_to_heads[p.name][:losses] += p.wins
+          @head_to_heads[p.name][:wins] += 1 if score > p.score
+          @head_to_heads[p.name][:ties] += 1 if score == p.score
+          @head_to_heads[p.name][:losses] += 1 if score < p.score
         end
-        @head_to_heads[p.name][:total_wins] += p.losses
-        @head_to_heads[p.name][:total_ties] += p.ties
-        @head_to_heads[p.name][:total_losses] += p.wins
+        @head_to_heads[p.name][:total_wins] += 1 if score > p.score
+        @head_to_heads[p.name][:total_ties] += 1 if score == p.score
+        @head_to_heads[p.name][:total_losses] += 1 if score < p.score
       end
     end
     
