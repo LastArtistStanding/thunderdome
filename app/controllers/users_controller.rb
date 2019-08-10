@@ -21,10 +21,10 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    participations = Participant.where(name: @user.name)
+    @participations = Participant.where(name: @user.name).order(id: :desc)
     
     @all_matches = []
-    participations.each { |p| @all_matches.push p.match }
+    @participations.each { |p| @all_matches.push p.match }
     @head_to_heads = {}
     @all_matches.each do |m|
       score = m.participants.find_by(name: @user.name).score
@@ -52,7 +52,6 @@ class UsersController < ApplicationController
     end
     
     @matches = []
-    @participations = Participant.where(name: @user.name)
     @participations.each do |p|
       @matches.push p.match
     end
