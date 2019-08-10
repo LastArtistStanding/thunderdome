@@ -40,7 +40,7 @@
                 <td><%= @opponents[index] %></td>
                 <td><%= m.date.strftime("%B %d, %Y") %></td>
                 <td><%= @results[index] %></td>
-                <td class="<%= @participations[index].elo_delta.round.zero? ? ( @participations[index].elo_delta.positive? ? "table-success" : "table-danger" ) : "table-warning" %>">
+                <td class="<%= @participations[index].elo_delta.round.zero? ? "table-warning" : ( @participations[index].elo_delta.positive? ? "table-success" : "table-danger" ) %>">
                   <%= @participations[index].elo.floor %> (<%= '+' if @participations[index].elo_delta.positive? %><%= @participations[index].elo_delta.round %>)
                 </td>
               </tr>
