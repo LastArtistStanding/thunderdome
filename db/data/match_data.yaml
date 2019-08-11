@@ -332,3 +332,9 @@ Match63:
     scores: "16|1"
     topic: "Food"
     date: 2019-08-09
+Match64:
+    participants: "Nessie|hoppy|Kringle"
+    scores: "9|10|9"
+    topic: "Waifu"
+    description: "Used the 'Super Waifu Generator': https://en.shindanmaker.com/615152"
+    date: 2019-08-09
