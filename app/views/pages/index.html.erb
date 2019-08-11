@@ -49,7 +49,7 @@
                   <br><%= battle.date.strftime("%B %d, %Y") %>
                 </td>
                 <td>
-                  <%= battle.flavor_text %>
+                  <%= [battle.topic] %> <%= battle.flavor_text %>
                 </td>
               </tr>
             <% end %>
