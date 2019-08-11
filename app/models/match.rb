@@ -50,7 +50,7 @@ class Match < ApplicationRecord
     return multidome_winner_tie(winners) if winner_score == next_highest
     return multidome_sweep(winner_name) if average_score == 0
     return multidome_destroy(winner_name) if winner_score > (scores.sum - winner_score)
-    return multidome_close(winner_name) if winner_score < 0.6 * average_score
+    return multidome_close(winner_name) if winner_score * 0.7 < average_score
     
     multidome_standard(winner_name)
   end
