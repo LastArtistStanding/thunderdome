@@ -1,4 +1,6 @@
 namespace :td do
+  STARTING_ELO = 1500.0
+  
   desc "Dumps database and recalculates."
   task :recalculate => :environment do
     Participant.destroy_all
@@ -69,7 +71,7 @@ namespace :td do
   def map_users(user_list)
     user_list.each_with_index do |user, index|
       if User.find_by(name: user).nil?
-        user_list[index] = User.create(name: user, elo: 1200.0, wins: 0, losses: 0, ties: 0, multi_wins: 0, multi_losses: 0, multi_ties: 0)
+        user_list[index] = User.create(name: user, elo: STARTING_ELO, wins: 0, losses: 0, ties: 0, multi_wins: 0, multi_losses: 0, multi_ties: 0)
       else
         user_list[index] = User.find_by(name: user)
       end
@@ -142,9 +144,9 @@ namespace :td do
   end
   
   def calc_elo_change(player_elo, opponent_elo, win)
-    k = 80
+    k = 200
     
-    probability = 1.0 / ( 1.0 + ( 10.0 ** ( ( opponent_elo - player_elo ) / 400.0 ) ) )
+    probability = 1.0 / ( 1.0 + ( 10.0 ** ( ( opponent_elo - player_elo ) / 1000.0 ) ) )
 
     ( k * (win - probability) )
   end
