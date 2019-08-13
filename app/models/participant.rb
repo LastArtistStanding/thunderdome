@@ -22,10 +22,10 @@ class Participant < ApplicationRecord
     return "SteelT" if elo >= 1500.0
     return "Steel" if elo >= 1350.0
     return "IronG" if elo >= 1200.0
-    return "IronT" if elo >= 1150.0
-    return "Iron" if elo >= 1000.0
-    return "BronzeG" if elo >= 850.0
-    return "BronzeT" if elo >= 700.0
+    return "IronT" if elo >= 1050.0
+    return "Iron" if elo >= 900.0
+    return "BronzeG" if elo >= 750.0
+    return "BronzeT" if elo >= 600.0
     return "Bronze" if elo >= 0.0
     return "ChefHat"
   end
