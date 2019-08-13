@@ -338,3 +338,20 @@ Match64:
     topic: "Waifu"
     description: "Used the 'Super Waifu Generator': https://en.shindanmaker.com/615152"
     date: 2019-08-09
+Match65:
+    participants: "Cool dude|the1banana"
+    scores: "14|4"
+    topic: "Pilot"
+    date: 2019-08-11
+Match66:
+    participants: "the1banana|Ursus"
+    scores: "12|8"
+    topic: "Hydra Samurai"
+    date: 2019-08-11
+    duration: "1 hr"
+Match67:
+    participants: "Subu|Arachni"
+    scores: "18|2"
+    topic: "Jojo"
+    date: 2019-08-12
+    duration: "20 min"
