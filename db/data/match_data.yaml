@@ -69,7 +69,7 @@ Match13:
     topic: "Twitch Streamer"
     date: 2019-07-03
 Match14:
-    participants: "Zanti|Choob"
+    participants: "Santi|Choob"
     scores: "8|13"
     topic: "Flower People"
     date: 2019-07-03
@@ -79,7 +79,7 @@ Match15:
     topic: "Prosthetic Limbs"
     date: 2019-07-03
 Match16:
-    participants: "Zanti|Kringle"
+    participants: "Santi|Kringle"
     scores: "7|17"
     topic: "Bald, Yet Beautiful"
     duration: "2 hr"
@@ -355,3 +355,9 @@ Match67:
     topic: "Jojo"
     date: 2019-08-12
     duration: "20 min"
+Match68:
+    participants: "disco darling|Santi"
+    scores: "16|6"
+    topic: "Music Taking Physical Form"
+    date: 2019-08-12
+    duration: "1 hr"
