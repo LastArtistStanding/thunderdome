@@ -361,3 +361,19 @@ Match68:
     topic: "Music Taking Physical Form"
     date: 2019-08-12
     duration: "1 hr"
+Match69:
+    participants: "Jason|Subu"
+    scores: "12|5"
+    topic: "Catgirl"
+    date: 2019-08-15
+Match70:
+    participants: "hoppy|Nessie"
+    scores: "9|14"
+    topic: "Fursona"
+    date: 2019-08-16
+    description: "Participants used a random fursona generator."
+Match71:
+    participants: "Jason|Ursus"
+    scores: "1|-1"
+    topic: "Schoolgirl"
+    date: 2019-08-17
